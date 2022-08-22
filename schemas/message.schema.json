@@ -1,0 +1,28 @@
+{
+    "title": "OneTokeMessageSchema - Standard: OneToken, Version: 1.0, Schema: Message",
+    "description": "Schema for validating the request payload when creating a OneToken Blockchain Message object",
+    "$id": "https://api.microsoft.com/oneToken/standards/data/schemas/oneToken/1.0/message.schema.json",
+  
+    "type": "object",
+    "properties": {
+      "messageType": {
+        "description": "Indicates the type of message that this Blockchain Object represents",
+        "enum": ["email", "text", "fax"]
+      },
+      "from": { "description": "From address", "type": "string" },
+      "to": { "description": "To address", "type": "string" },
+      "messageTitle": {
+        "description": "Title of the Message Object",
+        "type": "string"
+      },
+      "messageBody": {
+        "description": "Text body, represented as an array of text, of the Message Object",
+        "type": "array",
+        "items": {
+          "messageLine": { "type": "string" }
+        }
+      }
+    },
+    "required": ["to", "messageTitle", "messageBody"]
+  }
+  
