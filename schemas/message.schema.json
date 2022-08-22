@@ -1,7 +1,7 @@
 {
     "title": "OneTokeMessageSchema - Standard: OneToken, Version: 1.0, Schema: Message",
     "description": "Schema for validating the request payload when creating a OneToken Blockchain Message object",
-    "$id": "https://api.microsoft.com/oneToken/standards/data/schemas/oneToken/1.0/message.schema.json",
+    "$id": "https://raw.githubusercontent.com/bobmugura/json-schema/main/schemas/message.schema.json",
   
     "type": "object",
     "properties": {
