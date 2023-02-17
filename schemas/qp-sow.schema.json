@@ -1,0 +1,70 @@
+{
+  "$id": "qp-sow.schema.json",
+  "title": "Quiet Platforms Statement of Work Data Schema",
+  "description": "Schema relating to an SOW Data object",
+  "type": "object",
+  "properties": {
+    "shipperID": {
+      "description": "Shipper Identification",
+      "type": "string"
+    },
+    "originID": { "type": "string" },
+    "carrierID": { "type": "string" },
+    "accountNumbers": { "enum": ["ac1001", "ac1002"] },
+    "serviceLevels": { "enum": ["economy", "standard", "express"] },
+    "Guaranteed": { "enum": ["yes", "no"] },
+    "presort": {
+      "enum": ["none", "allServiceLevels", "onlyExpress", "bySortCode"]
+    },
+    "startDate": {
+      "description": "UTC Timestamp of API call (E.g. 2021-01-06T05:17:19.782Z)",
+      "type": "string"
+    },
+    "generalRateIncrease": { "type": "string" },
+    "pickup": { "enum": ["liveLoad", "dropHook", "dropOff"] },
+    "allowedFormat": {
+      "enum": ["gayLords", "floorLoadedBoxes", "wrappedPallets"]
+    },
+    "cutTime": {
+      "description": "UTC Timestamp of API call (E.g. 2021-01-06T05:17:19.782Z)",
+      "type": "string"
+    },
+    "weightLimit1_lbs": { "type": "string" },
+    "weightLimit2_lbs": { "type": "string" },
+    "cubeLimit1_ft3": { "type": "string" },
+    "cubeLimit2_ft3": { "type": "string" },
+    "dimensionLimit1_in": { "type": "string" },
+    "dimensionLimit2_in": { "type": "string" },
+    "allowedPackaging": { "enum": ["Bag", "Box", "Special"] },
+    "allowedDeliveryOptions": {
+      "enum": ["SA", "SU", "POD", "HOLD", "REDIRECT"]
+    },
+    "dimFactorCubeLimit": { "type": "number" },
+    "peakStartDate": { "type": "string" },
+    "peakEndDate": { "type": "string" },
+    "returnMethod": { "enum": ["origin", "returnAddress", "pickup"] },
+    "minDailyCount": { "type": "number" },
+    "minWeeklyCount": { "type": "number" },
+    "invoicePeriod": { "enum": ["daily", "weekly", "monthly"] },
+    "paymentTerms": { "enum": ["ACH", "NET10", "NET15", "NET30"] },
+    "serviceMapURL": { "type": "string" },
+    "serviceMapMD5": { "type": "number" },
+    "rateTableURL": { "type": "string" },
+    "rateTableMDF": { "type": "number" },
+    "surchargeTableURL": { "type": "string" },
+    "surchargeTableMD5": { "type": "number" },
+    "liabilityLimit": { "type": "number" },
+    "restrictions": {
+      "description": "Area to enter restrictions - unformatted",
+      "type": "object",
+      "properties": {},
+      "additionalProperties": true
+    },
+    "prohibited": {
+      "description": "Area to enter restrictions - unformatted",
+      "type": "object",
+      "properties": {},
+      "additionalProperties": true
+    }
+  }
+}
